@@ -83,5 +83,40 @@ session_start();
         <input type="submit">
     </form>
 
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>username</th>
+            <th>password</th>
+        </tr>
+
+        <?php
+        /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
+        $sql = "SELECT
+                id,
+                username,
+                password,
+                date
+              FROM
+                users
+            ;";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        ?>
+
+
+        <?php
+        /* parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table. */
+        while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+            <tr>
+                <td><?=$row["id"]?></td>
+                <td><?=$row["username"]?></td>
+                <td><?=$row["password"]?></td>
+            </tr>
+        <?php endwhile;?>
+
+    </table>
+
 </body>
 </html>
