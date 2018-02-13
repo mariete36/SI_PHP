@@ -61,7 +61,7 @@ session_start();
 </table>
 
 
-    <form class="add_form" action="actions/ACTION_add.php" method="POST">
+    <form class="add_form" action="actions/action_add.php" method="POST">
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="text"      name='picture'      placeholder="url">
@@ -82,11 +82,6 @@ session_start();
         <input type="text"      name='date'      placeholder="date">
         <input type="submit">
     </form>
-
-<?php
-// SHOW ERROR MESSAGES
-//require_once "show_error_msg.php";
-?>
 
 </body>
 </html>
