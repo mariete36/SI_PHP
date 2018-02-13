@@ -1,8 +1,7 @@
 <?php
-// CONNECT TO SERVER AND DATABASE
+// CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
-// GET DATA
-require_once "consult_db.php";
+
 // START SESSION
 session_start();
 ?>
@@ -22,13 +21,42 @@ session_start();
 <table>
     <tr>
         <th>ID</th>
-        <th>Title</th>
-        <th>Note</th>
+        <th>name</th>
+        <th>genre</th>
+        <th>picture</th>
+        <th>date</th>
     </tr>
 
     <?php
+        /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
+        $sql = "SELECT
+             id,
+             name,
+             genre,
+             picture,
+             date
+            FROM
+             anime
+    ;";
 
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     ?>
+
+
+    <?php
+
+    /* parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table. */
+    while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+            <tr>
+                <td><?=$row["id"]?></td>
+                <td><?=$row["name"]?></td>
+                <td><?=$row["genre"]?></td>
+                <td><?=$row["picture"]?></td>
+                <td><?=$row["date"]?></td>
+            </tr>
+    <?php endwhile;?>
+
 </table>
 
 
