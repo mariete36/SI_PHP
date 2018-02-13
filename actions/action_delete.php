@@ -1,7 +1,15 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: antho
- * Date: 12/02/2018
- * Time: 14:03
- */
+
+require_once "../init_db.php";
+
+
+$sql = "DELETE FROM
+`anime`
+WHERE
+`id` = :id
+;";
+$stmt = $conn->prepare($sql);
+$stmt->bindValue(':id', $_POST['id']);
+$stmt->execute();
+header('Location: ../index.php');
