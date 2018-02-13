@@ -18,72 +18,65 @@ session_start();
 </head>
 
 <body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>genre</th>
+            <th>picture</th>
+            <th>date</th>
+            <th>actions</th>
+        </tr>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>name</th>
-        <th>genre</th>
-        <th>picture</th>
-        <th>date</th>
-        <th>actions</th>
-    </tr>
+        <?php
+            /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
+            $sql = "SELECT
+                id,
+                name,
+                genre,
+                picture,
+                date
+              FROM
+                anime
+            ;";
 
-    <?php
-        /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
-        $sql = "SELECT
-            id,
-            name,
-            genre,
-            picture,
-            date
-          FROM
-            anime
-        ;";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+        ?>
 
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-    ?>
-
-
-    <?php
-
-    /* parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table. */
-    while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
-            <tr>
-                <td><?=$row["id"]?></td>
-                <td><?=$row["name"]?></td>
-                <td><?=$row["genre"]?></td>
-                <td><?=$row["picture"]?></td>
-                <td><?=$row["date"]?></td>
-                <td>
-                    <form action="actions/action_delete.php" method="POST">
-                        <input type="hidden" name="id" value="<?=$row["id"]?>">
-                        <input type="submit" value="delete">
-                    </form>
-                </td>
-            </tr>
-    <?php endwhile;?>
-
-</table>
-
+        <?php
+        /* parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table. */
+        while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+                <tr>
+                    <td><?=$row["id"]?></td>
+                    <td><?=$row["name"]?></td>
+                    <td><?=$row["genre"]?></td>
+                    <td><?=$row["picture"]?></td>
+                    <td><?=$row["date"]?></td>
+                    <td>
+                        <form action="actions/action_delete.php" method="POST">
+                            <input type="hidden" name="id" value="<?=$row["id"]?>">
+                            <input type="submit" value="delete">
+                        </form>
+                    </td>
+                </tr>
+        <?php endwhile;?>
+    </table>
 
     <form class="add_form" action="actions/action_add.php" method="POST">
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="text"      name='picture'      placeholder="url">
-        <input type="text"      name='date'      placeholder="date">
+        <input type="text"      name='date'         placeholder="date">
         <input type="submit">
     </form>
 
-
-
     <form action="actions/action_modify.php" method="POST">
-        <input type="text" name="id" placeholder="enter id to modify">
+        <input type="text"      name="id"           placeholder="enter id to modify">
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="text"      name='picture'      placeholder="url">
-        <input type="text"      name='date'      placeholder="date">
+        <input type="text"      name='date'         placeholder="date">
         <input type="submit">
     </form>
 
@@ -96,31 +89,35 @@ session_start();
 
         <?php
         /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
-        $sql = "SELECT
+        $sql_user = "SELECT
                 id,
                 username,
-                password,
-                date
+                password
               FROM
                 users
             ;";
 
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        $stmt_user = $conn->prepare($sql_user);
+        $stmt_user->execute();
         ?>
 
-
         <?php
-        /* parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table. */
-        while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+        /**
+         * parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table.
+         * */
+        while (false !== $row = $stmt_user->fetch(PDO::FETCH_ASSOC)) :?>
             <tr>
                 <td><?=$row["id"]?></td>
                 <td><?=$row["username"]?></td>
                 <td><?=$row["password"]?></td>
+                <td>
+                    <form action="actions/action_delete.php" method="POST">
+                        <input type="hidden" name="id" value="<?=$row["id"]?>">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
             </tr>
         <?php endwhile;?>
-
     </table>
-
 </body>
 </html>

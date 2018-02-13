@@ -7,7 +7,6 @@ session_start();
 ?>
 
 <!doctype html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,15 +15,11 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
-
-<form action="actions/action_sign_in.php" method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <input type="submit">
-</form>
-
-
+    <form action="actions/action_sign_in.php" method="post">
+        <input type="text"     name="username" placeholder="Username">
+        <input type="password" name="pass"     placeholder="Password">
+        <input type="submit">
+    </form>
 </body>
 </html>
