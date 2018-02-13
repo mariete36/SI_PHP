@@ -7,7 +7,7 @@ SET
    `name` = :name,
    `genre` = :genre,
    `picture` = :picture,
-   `date` = :date,
+   `date` = :date
 WHERE
    `id` = :id
 ;";
