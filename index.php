@@ -26,6 +26,7 @@ session_start();
         <th>genre</th>
         <th>picture</th>
         <th>date</th>
+        <th>actions</th>
     </tr>
 
     <?php
@@ -55,6 +56,12 @@ session_start();
                 <td><?=$row["genre"]?></td>
                 <td><?=$row["picture"]?></td>
                 <td><?=$row["date"]?></td>
+                <td>
+                    <form action="actions/action_delete.php" method="POST">
+                        <input type="hidden" name="id" value="<?=$row["id"]?>">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
             </tr>
     <?php endwhile;?>
 
@@ -69,10 +76,7 @@ session_start();
         <input type="submit">
     </form>
 
-    <form action="actions/action_delete.php" method="POST">
-        <input type="text" name="id" placeholder="enter id to delete">
-        <input type="submit">
-    </form>
+
 
     <form action="actions/action_modify.php" method="POST">
         <input type="text" name="id" placeholder="enter id to modify">
