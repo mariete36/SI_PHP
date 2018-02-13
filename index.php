@@ -30,14 +30,14 @@ session_start();
     <?php
         /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
         $sql = "SELECT
-             id,
-             name,
-             genre,
-             picture,
-             date
-            FROM
-             anime
-    ;";
+            id,
+            name,
+            genre,
+            picture,
+            date
+          FROM
+            anime
+        ;";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -61,14 +61,17 @@ session_start();
 
 
     <form class="add_form" action="actions/ACTION_add.php" method="POST">
-        <input type="text"      name='first_name'   placeholder="First name">
-        <input type="text"      name='last_name'    placeholder="Last name">
-        <input type="text"      name='age'          placeholder="Age">
+        <input type="text"      name='name'         placeholder="name">
+        <input type="text"      name='genre'        placeholder="genre">
+        <input type="text"      name='picture'      placeholder="url">
+        <input type="text"      name='date'      placeholder="date">
         <input type="submit">
     </form>
+
 <?php
 // SHOW ERROR MESSAGES
-require_once "show_error_msg.php";
+//require_once "show_error_msg.php";
 ?>
+
 </body>
 </html>
