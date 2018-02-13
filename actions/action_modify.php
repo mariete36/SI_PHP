@@ -5,9 +5,9 @@ $sql = "UPDATE
       `anime`
 SET
    `name` = :name,
-   `genre` = :genre;
-   `picture` = :picture;
-   `date` = :date;
+   `genre` = :genre,
+   `picture` = :picture,
+   `date` = :date
 WHERE
    `id` = :id
 ;";
