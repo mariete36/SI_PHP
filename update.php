@@ -18,7 +18,6 @@ $sql = "SELECT
 name,
 genre,
 picture,
-synopsis,
 date
 FROM
 anime
@@ -42,7 +41,7 @@ exit();
 <div class="update">
 <p>Modify</p>
 
-    <form action="actions/action_modify.php" method="POST">
+    <form action="actions/action_update.php" method="POST">
         <input type="hidden"    name='id'           placeholder="id"        value="<?=$_POST["id"]?>">
         <input type="text"      name='name'         placeholder="name"      value="<?=$row["name"]?>">
         <input type="text"      name='genre'        placeholder="genre"     value="<?=$row["genre"]?>">
