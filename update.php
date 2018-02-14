@@ -19,6 +19,7 @@ name,
 genre,
 url,
 year
+
 FROM
 anime
 WHERE
