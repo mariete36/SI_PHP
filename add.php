@@ -8,12 +8,12 @@
 
 ?>
 
-<a href="index.php">Index</a>
+<a href="admin.php">Index</a>
 
 <div class="create">
     <p>Add</p>
 
-    <form class="add_form" action="actions/ACTION_add.php" method="POST">
+    <form class="add_form" action="actions/action_add.php" method="post">
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="text"      name='picture'      placeholder="url">
