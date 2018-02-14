@@ -33,7 +33,8 @@ if (!isset($_GET['id'])) {
 $sql = "SELECT
     name,
     genre,
-    picture,
+    url,
+    year,
     synopsis
   FROM
     anime
@@ -51,7 +52,7 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
 //    exit();
 //}
 ?>
-<a href="index.php">index</a>
+<a href="admin.php">admin</a>
 <h1><?=$row["name"]?></h1>
 
 <p><?=$row["synopsis"]?></p>

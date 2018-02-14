@@ -20,6 +20,7 @@ session_start();
 </head>
 
 <body>
+<a href="index.php">index</a>
 <div class="read">
     <table>
         <tr>
@@ -27,7 +28,7 @@ session_start();
             <th>name</th>
             <th>genre</th>
             <th>picture</th>
-            <th>date</th>
+            <th>year</th>
 
         </tr>
 
@@ -37,8 +38,8 @@ session_start();
             id,
             name,
             genre,
-            picture,
-            date
+            url,
+            year
           FROM
             anime
         ;";
@@ -52,8 +53,8 @@ session_start();
                 <td><?=$row["id"]?></td>
                 <td><a href="anime_description.php?id=<?=$row["id"]?>"><?=$row["name"]?></a></td>
                 <td><?=$row["genre"]?></td>
-                <td><?=$row["picture"]?></td>
-                <td><?=$row["date"]?></td>
+                <td><?=$row["url"]?></td>
+                <td><?=$row["year"]?></td>
                 <td class="modifyLink">
                     <form action="update.php" method="POST">
                         <input type="hidden" name="id" value="<?=$row["id"]?>">
@@ -95,7 +96,7 @@ session_start();
                     username,
                     password
                   FROM
-                    users
+                    user
                 ;";
 
             $stmt_user = $conn->prepare($sql_user);
@@ -112,7 +113,7 @@ session_start();
                     <td><?=$row["username"]?></td>
                     <td><?=$row["password"]?></td>
                     <td>
-                        <form action="actions/action_delete.php" method="POST">
+                        <form action="actions/action_user_delete.php" method="POST">
                             <input type="hidden" name="id" value="<?=$row["id"]?>">
                             <input type="submit" value="delete">
                         </form>
