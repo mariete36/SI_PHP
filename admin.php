@@ -14,6 +14,8 @@ session_start();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
     <title>Document</title>
 </head>
 
@@ -89,46 +91,47 @@ session_start();
     </div>
 
 
-
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>username</th>
-            <th>password</th>
-        </tr>
-
-        <?php
-        /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
-        $sql_user = "SELECT
-                id,
-                username,
-                password
-              FROM
-                users
-            ;";
-
-        $stmt_user = $conn->prepare($sql_user);
-        $stmt_user->execute();
-        ?>
-
-        <?php
-        /**
-         * parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table.
-         * */
-        while (false !== $row = $stmt_user->fetch(PDO::FETCH_ASSOC)) :?>
+    <div class="read">
+        <table>
             <tr>
-                <td><?=$row["id"]?></td>
-                <td><?=$row["username"]?></td>
-                <td><?=$row["password"]?></td>
-                <td>
-                    <form action="actions/action_delete.php" method="POST">
-                        <input type="hidden" name="id" value="<?=$row["id"]?>">
-                        <input type="submit" value="delete">
-                    </form>
-                </td>
+                <th>ID</th>
+                <th>username</th>
+                <th>password</th>
             </tr>
-        <?php endwhile;?>
-    </table>
+
+            <?php
+            /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
+            $sql_user = "SELECT
+                    id,
+                    username,
+                    password
+                  FROM
+                    users
+                ;";
+
+            $stmt_user = $conn->prepare($sql_user);
+            $stmt_user->execute();
+            ?>
+
+            <?php
+            /**
+             * parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table.
+             * */
+            while (false !== $row = $stmt_user->fetch(PDO::FETCH_ASSOC)) :?>
+                <tr>
+                    <td><?=$row["id"]?></td>
+                    <td><?=$row["username"]?></td>
+                    <td><?=$row["password"]?></td>
+                    <td>
+                        <form action="actions/action_delete.php" method="POST">
+                            <input type="hidden" name="id" value="<?=$row["id"]?>">
+                            <input type="submit" value="delete">
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile;?>
+        </table>
+    </div>
 
     <?php
     // SHOW ERROR MESSAGES
