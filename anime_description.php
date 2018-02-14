@@ -46,10 +46,10 @@ $stmt->bindValue(":id", $_GET["id"]);
 $stmt->execute();
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!isset($row['name'])) {
-    header('Location:index.php?error');
-    exit();
-}
+//if (!isset($row['name'])) {
+//    header('Location:index.php?error');
+//    exit();
+//}
 ?>
 <a href="index.php">index</a>
 <h1><?=$row["name"]?></h1>

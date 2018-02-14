@@ -18,3 +18,7 @@ td {
 .create form, .update form {
     margin: 10px;
 }
+
+.modifyLink, .deleteButton {
+    width: 30px;
+}
