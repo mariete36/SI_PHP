@@ -13,7 +13,6 @@ WHERE
    id = :id
 ;";
 
-
 $stmt = $conn->prepare($sql);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':name', $_POST['name']);

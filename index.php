@@ -27,7 +27,7 @@ session_start();
         <th>genre</th>
         <th>picture</th>
         <th>date</th>
-        <th>action</th>
+
     </tr>
 
     <?php
@@ -54,7 +54,13 @@ session_start();
                 <td><?=$row["genre"]?></td>
                 <td><?=$row["picture"]?></td>
                 <td><?=$row["date"]?></td>
-                <td>
+                <td class="modifyLink">
+                    <form action="update.php" method="POST">
+                        <input type="hidden" name="id" value="<?=$row["id"]?>">
+                        <input type="submit" value="Modify">
+                    </form>
+                </td>
+                <td class="deleteButton">
                     <form action="actions/action_delete.php" method="POST">
                         <input type="hidden" name="id" value="<?=$row["id"]?>">
                         <input type="submit" value="Delete">
@@ -65,29 +71,9 @@ session_start();
 
 </table>
 </div>
-<div class="create">
-<p>Add</p>
 
-    <form class="add_form" action="actions/ACTION_add.php" method="POST">
-        <input type="text"      name='name'         placeholder="name">
-        <input type="text"      name='genre'        placeholder="genre">
-        <input type="text"      name='picture'      placeholder="url">
-        <input type="text"      name='date'         placeholder="date">
-        <input type="submit">
-    </form>
-</div>
-<div class="update">
-<p>Modify</p>
+<a href="add.php">Add</a>
 
-    <form action="actions/action_modify.php" method="POST">
-        <input type="text"      name='id'           placeholder="enter id to modify">
-        <input type="text"      name='name'         placeholder="name">
-        <input type="text"      name='genre'        placeholder="genre">
-        <input type="text"      name='url'          placeholder="url">
-        <input type="text"      name='date'         placeholder="date">
-        <input type="submit">
-    </form>
-</div>
 <?php
 // SHOW ERROR MESSAGES
 //require_once "show_error_msg.php";
