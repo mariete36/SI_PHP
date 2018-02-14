@@ -16,9 +16,12 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+
+    <a href="index.php">index</a>
+    
     <form action="actions/action_sign_in.php" method="post">
-        <input type="text"     name="username" placeholder="Username">
-        <input type="password" name="pass"     placeholder="Password">
+        <input type="text"     name="username"      placeholder="Username">
+        <input type="password" name="password"     placeholder="Password">
         <input type="submit">
     </form>
 </body>
