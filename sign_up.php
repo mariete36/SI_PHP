@@ -4,16 +4,6 @@ require_once "init_db.php";
 
 // START SESSION
 session_start();
-$_SESSION[admin]
-
-$sql = "SELECT
-            username,
-            password
-          FROM
-            users
-        ;";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
 ?>
 
 <!doctype html>
@@ -26,7 +16,7 @@ $stmt->execute();
     <title>Document</title>
 </head>
 <body>
-    <form action="actions/action_sign_in.php" method="post">
+    <form action="actions/action_sign_up.php" method="post">
         <input type="text"     name="username" placeholder="Username">
         <input type="password" name="pass"     placeholder="Password">
         <input type="submit">
