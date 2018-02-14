@@ -1,9 +1,6 @@
 <?php
 // CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
-
-// START SESSION
-session_start();
 ?>
 
 <!doctype html>

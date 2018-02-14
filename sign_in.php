@@ -1,19 +1,6 @@
 <?php
 // CONNECT TO SERVER AND DATABASE AND GET DATA
-require_once "init_db.php";
-
-// START SESSION
-session_start();
-$_SESSION[admin]
-
-$sql = "SELECT
-            username,
-            password
-          FROM
-            users
-        ;";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
+require_once "not_admin.php";
 ?>
 
 <!doctype html>
@@ -26,9 +13,11 @@ $stmt->execute();
     <title>Document</title>
 </head>
 <body>
+    <a href="index.php">index</a>
+    
     <form action="actions/action_sign_in.php" method="post">
-        <input type="text"     name="username" placeholder="Username">
-        <input type="password" name="pass"     placeholder="Password">
+        <input type="text"     name="username"      placeholder="Username">
+        <input type="password" name="password"     placeholder="Password">
         <input type="submit">
     </form>
 </body>

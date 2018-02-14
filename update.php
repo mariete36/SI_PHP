@@ -19,8 +19,9 @@ if (!isset($_POST['id'])) {
 $sql = "SELECT
 name,
 genre,
-picture,
-date
+url,
+year
+
 FROM
 anime
 WHERE
@@ -33,7 +34,8 @@ $stmt->execute();
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!isset($row['name'])) {
-header('Location:index.php?error');
+    echo $row["name"];
+    header('Location:index.php?error');
 exit();
 }
 ?>
@@ -47,8 +49,8 @@ exit();
         <input type="hidden"    name='id'           placeholder="id"        value="<?=$_POST["id"]?>">
         <input type="text"      name='name'         placeholder="name"      value="<?=$row["name"]?>">
         <input type="text"      name='genre'        placeholder="genre"     value="<?=$row["genre"]?>">
-        <input type="text"      name='url'          placeholder="url"       value="<?=$row["picture"]?>">
-        <input type="text"      name='date'         placeholder="date"      value="<?=$row["date"]?>">
+        <input type="text"      name='url'          placeholder="url"       value="<?=$row["url"]?>">
+        <input type="text"      name='year'         placeholder="year"      value="<?=$row["year"]?>">
         <input type="submit">
     </form>
 </div>

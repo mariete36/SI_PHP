@@ -5,7 +5,7 @@
  * $conn = new PDO(dsn: 'database;server', username: 'mysqlusername', password:'mysqlpass');
  */
 try {
-    $conn = new PDO('mysql:dbname=oeuvre;host=localhost', 'root', 'oui');
+    $conn = new PDO('mysql:dbname=otakoon;host=localhost', 'root', 'oui');
 } catch (PDOException $exception) {
     die($exception->getMessage());
 }
