@@ -15,5 +15,11 @@
 <body>
     <div><a href="sign_in.php">sign_in</a></div>
     <div><a href="admin.php">admin_panel</a></div>
+
+<?php
+// SHOW ERROR MESSAGES
+//require_once "show_error_msg.php";
+?>
+
 </body>
 </html>
