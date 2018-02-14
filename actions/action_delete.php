@@ -8,7 +8,7 @@ WHERE
 $stmt = $conn->prepare($sql);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->execute();
-header('Location: ../index.php');
+header('Location: ../admin.php');
 
 
 $sql = "DELETE FROM
@@ -19,4 +19,4 @@ WHERE
 $stmt_user = $conn->prepare($sql);
 $stmt_user->bindValue(':id', $_POST['id']);
 $stmt_user->execute();
-header('Location: ../index.php');
+header('Location: ../admin.php');
