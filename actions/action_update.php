@@ -1,4 +1,5 @@
 <?php
+
 require_once "../init_db.php";
 
 $sql = "UPDATE
@@ -9,14 +10,15 @@ SET
    `picture` = :picture,
    `date` = :date
 WHERE
-   `id` = :id
+   id = :id
 ;";
+
 
 $stmt = $conn->prepare($sql);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':name', $_POST['name']);
 $stmt->bindValue(':genre', $_POST['genre']);
-$stmt->bindValue(':picture', $_POST['picture']);
+$stmt->bindValue(':picture', $_POST['url']);
 $stmt->bindValue(':date', $_POST['date']);
 $stmt->execute();
 header('Location: ../index.php?id='.$conn->lastInsertId());
