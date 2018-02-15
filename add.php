@@ -17,7 +17,10 @@ session_start();
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="file"      name="fileToUpload">
-        <input type="text"      name='year'         placeholder="year">
+        <input type="number"      name='year'         placeholder="year">
+        <input type="number"      name='episode'         placeholder="episode">
+        <input type="text" name="synopsis" placeholder="synopsis">
+
         <input type="submit">
     </form>
 </div>
