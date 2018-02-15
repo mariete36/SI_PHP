@@ -1,8 +1,6 @@
-
 <?php
 
 require_once "../init_db.php";
-
 
 $sql = "DELETE FROM
 `anime`
@@ -12,4 +10,4 @@ WHERE
 $stmt = $conn->prepare($sql);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->execute();
-header('Location: ../index.php');
+header('Location: ../admin.php');
