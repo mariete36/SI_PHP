@@ -16,11 +16,11 @@ if($check === false) {
 $extension=pathinfo($_FILES['fileToUpload']['name'], PATHINFO_EXTENSION);
 
 //Commande MySQL
-$requete = "INSERT INTO 
-`anime` 
-(`name`, `genre`, `url`, `year`) 
+$requete = "INSERT INTO
+`anime`
+(`name`, `genre`, `url`, `year`, `episode`, `synopsis`)
 VALUES
-(:name, :genre, :url ,:year)
+(:name, :genre, :url ,:year, :episode, :synopsis)
 ;";
 
 //On bind les valeurs de la commande MySQL et on execute
@@ -29,6 +29,8 @@ $stmt->bindValue(':name', $_POST['name']);
 $stmt->bindValue(':genre', $_POST['genre']);
 $stmt->bindValue(':url', $extension);
 $stmt->bindValue(':year', $_POST['year']);
+$stmt->bindValue(':episode', $_POST['episode']);
+$stmt->bindValue(':synopsis', $_POST['synopsis']);
 $stmt->execute();
 
 
