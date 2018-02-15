@@ -1,6 +1,5 @@
 <?
 //require 'is_admin.php';
-// CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
 ?>
 

@@ -25,17 +25,21 @@
   |-actions
   |   |--action_add.php
   |   |--action_delete.php
-  |   |--action_modify.php
-  |   |--action_add.php
-  |   |--action_delete.php
+  |   |--action_update.php
+  |   |--action_sign_in.php
+  |   |--action_sign_up.php
   |   
   |--index.php
   |--init_db.php
   |--admin.php
-  |--init_db.php
-  |--index.php
-  |--init_db.php
-  |--init_db.php
+  |--add.php
+  |--update.php
+  |--anime_description.php
+  |--anime_list.php
+  |--sign_in.php
+  |--sign_up.php
+  |--is_admin.php
+  |--not_admin.php
   ```
 
 
@@ -68,9 +72,19 @@
       Ce fichier est notre fonction permettant de supprimer des données dans la base de donnée, elle est implémentée directement dans notre table sous forme d'un bouton au bout de la ligne ciblée, elle supprime la ligne entière.
       
   - ```action_sign_in.php```
-      Ce fichier est notre fonction qui permet aux administrateurs d'acceder au back-office elle récupère le form post de la page ```sign_in.php```.
+      Ce fichier est notre fonction qui permet aux administrateurs et aux utilisateurs de se connecter elle récupère le form post de la page ```sign_in.php```.
       
   - ```sign_in.php```
       Ce fichier est l'interface permettant aux administrateurs d'accéder au back-office et à la gestion de la base de donnée.
       
-  
+  - ```action_sign_up.php```
+      Ce fichier est notre fonction qui permet aux utilisateurs de créer un identifiant et un mot de passe elle récupère le form post de la page ```sign_up.php```.
+        
+  - ```sign_up.php```
+      Ce fichier est l'interface permettant aux administrateurs d'accéder au back-office et à la gestion de la base de donnée.
+      
+  - ```anime_description.php```
+      Ce fichier est la page de description des anime, client.
+      
+  - ```anime_list.php```
+      Page d'affichage de tous les animes du site, côté client.
