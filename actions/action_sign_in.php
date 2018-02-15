@@ -1,19 +1,20 @@
 <?php
-if (!isset($_POST['username']) || !isset($_POST['password'])) {
-    header('Location: ../index.php?nopostdata');
+require_once "../init_db.php";
+$requete = "SELECT 
+  `username`,
+  `password`
+FROM 
+  `user`
+;";
+$stmt = $conn->prepare($requete);
+$stmt->execute();
+$admin = $stmt->fetch(PDO::FETCH_ASSOC);
+if (!isset($_POST['password']) || ($_POST['password'])!==$admin['password']) {
+    header('Location: ../index.php?error=nop');
+    exit;
+} else {
+    session_start();
+    $_SESSION['admin'] = 'yes';
+    header('Location: index.php?message=Welcome');
     exit;
 }
-require_once "../init_db.php";
-
-$requete_user = "INSERT INTO
-`user`
-(`username`, `password`)
-VALUES
-(:username, :password)
-;";
-$stmt_user = $conn->prepare($requete_user);
-$stmt_user->bindValue(':username', $_POST['username']);
-$stmt_user->bindValue(':password', $_POST['password']);
-$stmt_user->execute();
-
-header('Location: ../index.php?id='.$conn->lastInsertId());

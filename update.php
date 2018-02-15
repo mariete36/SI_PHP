@@ -5,8 +5,10 @@
  * Date: 14/02/2018
  * Time: 09:38
  */
-
+session_start();
 require_once "init_db.php";
+
+
 
 
 if (!isset($_POST['id'])) {
@@ -19,6 +21,7 @@ name,
 genre,
 url,
 year
+
 FROM
 anime
 WHERE
@@ -46,7 +49,6 @@ exit();
         <input type="hidden"    name='id'           placeholder="id"        value="<?=$_POST["id"]?>">
         <input type="text"      name='name'         placeholder="name"      value="<?=$row["name"]?>">
         <input type="text"      name='genre'        placeholder="genre"     value="<?=$row["genre"]?>">
-        <input type="text"      name='url'          placeholder="url"       value="<?=$row["url"]?>">
         <input type="text"      name='year'         placeholder="year"      value="<?=$row["year"]?>">
         <input type="submit">
     </form>
