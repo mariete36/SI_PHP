@@ -1,6 +1,7 @@
 <?php
 require_once 'init_db.php';
 require_once 'not_admin.php';
+//require_once 'is_admin.php';
 ?>
 
 <!DOCTYPE html>

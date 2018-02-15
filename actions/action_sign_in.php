@@ -1,21 +1,21 @@
 <?php
-//require '../is_admin.php';
+require '../is_admin.php';
 require_once "../init_db.php";
-$requete = "SELECT 
+$requete = "SELECT
   `username`,
   `password`
-FROM 
+FROM
   `user`
 ;";
 $stmt = $conn->prepare($requete);
 $stmt->execute();
 $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!isset($_POST['password']) || ($_POST['password'])!==$admin['password']) {
-    header('Location: ../index.php?error=nop');
+    header('Location: ../index.php?NOTLOGGED');
     exit;
 } else {
     session_start();
     $_SESSION['admin'] = 'yes';
-    header('Location: admin.php?message=Welcome');
+    header('Location: ../admin.php');
     exit;
 }
