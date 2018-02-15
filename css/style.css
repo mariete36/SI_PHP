@@ -172,11 +172,6 @@
    margin-bottom: 20px;
 }
 
-.backToTop {
-   display: flex;
-   width: 100%;
-   justify-content: flex-end;
-}
 
 .latestAnimesPic, .upcomingAnimesPic {
    border: solid 0px #000;
@@ -198,8 +193,9 @@
    text-align: center;
    padding: 40px 0;
 }
-
 .backToTop {
+   display: flex;
+   justify-content: flex-end;
    width: 80%;
    margin: 60px auto;
 }
@@ -224,42 +220,4 @@
 
 .footer p {
    font-size: 1.5em;
-}
-
-/**/
-
-.animeList_read {
-   width: 70%;
-   margin: 20px auto;
-}
-
-.animeList_read th {
-   font-size: 1.5em;
-}
-
-.animeList_read table {
-   width: 100%;
-}
-
-.animeList_tdPicture {
-   width: 200px;
-}
-
-.animeList_read td {
-vertical-align:middle;
-text-align: center;
-font-size: 2em;
-text-transform: capitalize;
-}
-
-.animeList_imgContainer{
-   height: 200px;
-   width: 200px;
-   overflow: hidden;
-   display: flex;
-   justify-content: center;
-}
-
-.animeList_imgContainer img {
-   height: 200px;
 }
