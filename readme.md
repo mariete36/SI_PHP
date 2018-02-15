@@ -26,7 +26,7 @@
   |   |--action_add.php
   |   |--action_delete.php
   |   |--action_update.php
-  
+  |
   |--index.php
   |--init_db.php
   |--admin.php
