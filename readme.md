@@ -67,23 +67,7 @@
 
   - ```action_delete.php```
       Ce fichier est notre fonction permettant de supprimer des données dans la base de donnée, elle est implémentée directement dans notre table sous forme d'un bouton au bout de la ligne ciblée, elle supprime la ligne entière.
-<<<<<<< HEAD
-      
-=======
 
-  - ```action_sign_in.php```
-      Ce fichier est notre fonction qui permet aux administrateurs et aux utilisateurs de se connecter elle récupère le form post de la page ```sign_in.php```.
-
-  - ```sign_in.php```
-      Ce fichier est l'interface permettant aux administrateurs d'accéder au back-office et à la gestion de la base de donnée.
-
-  - ```action_sign_up.php```
-      Ce fichier est notre fonction qui permet aux utilisateurs de créer un identifiant et un mot de passe elle récupère le form post de la page ```sign_up.php```.
-
-  - ```sign_up.php```
-      Ce fichier est l'interface permettant aux administrateurs d'accéder au back-office et à la gestion de la base de donnée.
-
->>>>>>> 2b850953b73dbd25f637b0a58987c7df710eb2de
   - ```anime_description.php```
       Ce fichier est la page de description des anime, client.
 
