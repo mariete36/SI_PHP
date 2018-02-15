@@ -1,7 +1,6 @@
 <?php
 // CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
-//require 'is_admin.php';
 ?>
 
 <!doctype html>
@@ -75,50 +74,6 @@ require_once "init_db.php";
 
             </table>
         </div>
-        <div class="flex">
-            <a class="addLink" href="add.php">Add</a>
-        </div>
-            <div class="read marginBottom">
-                <table class="table">
-                    <tr>
-                        <th class="th" >ID</th>
-                        <th class="th" >username</th>
-                        <th class="th" >password</th>
-                        <th class="th" >Delete</th>
-                    </tr>
-
-                    <?php
-                    /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
-                    $sql_user = "SELECT
-                            `id`,
-                            `username`,
-                            `password`
-                          FROM
-                            `user`
-                        ;";
-                    $stmt_user = $conn->prepare($sql_user);
-                    $stmt_user->execute();
-                    ?>
-
-                    <?php
-                    /**
-                     * parcours le tableau donné par fetch et affiche un tr tant qu'il trouve une ligne dans la table.
-                     * */
-                    while (false !== $row = $stmt_user->fetch(PDO::FETCH_ASSOC)) :?>
-                        <tr>
-                            <td class="td" ><?=$row["id"]?></td>
-                            <td class="td" ><?=$row["username"]?></td>
-                            <td class="td" ><?=$row["password"]?></td>
-                            <td class="td" >
-                                <form action="actions/action_user_delete.php" method="POST">
-                                    <input type="hidden" name="id" value="<?=$row["id"]?>">
-                                    <input class="deletebtn" type="submit" value="delete">
-                                </form>
-                            </td>
-                        </tr>
-                    <?php endwhile;?>
-                </table>
-            </div>
     </div>
 </body>
 </html>

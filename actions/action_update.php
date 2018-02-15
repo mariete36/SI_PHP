@@ -1,7 +1,7 @@
 <?php
 
 require_once "../init_db.php";
-
+// selectionne ine ligne de la table pour en modifier le nom le genre et l'année
 
 
 $sql = "UPDATE

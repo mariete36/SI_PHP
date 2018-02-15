@@ -1,11 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Son
- * Date: 14/02/2018
- * Time: 09:35
+ * formulaire add
  */
-session_start();
+
 ?>
 
 <a href="admin.php">Index</a>

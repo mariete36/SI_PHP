@@ -1,5 +1,4 @@
 <?php
-//require_once 'is_admin.php';
 require_once "init_db.php";
 ?>
 
@@ -66,11 +65,8 @@ require_once "init_db.php";
                   <a class="animeList_itemLink" href="anime_description.php?id=<?=$row["id"]?>">
                      <button type="button" name="button">Fiche descriptive</button>
                   </a>
-
-
                </div>
                <?php endwhile;?>
-
             </div>
          </div>
 
@@ -97,5 +93,5 @@ require_once "init_db.php";
       </div>
 
 
-
+   </body>
    </html>

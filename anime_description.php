@@ -28,7 +28,7 @@ if (!isset($_GET['id'])) {
     header('Location:index.php');
     exit();
 }
-
+// commande MySQL qui selectionne les entrées de la table anime par ligne avec l'ID
 $sql = "SELECT
     name,
     genre,
@@ -45,7 +45,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bindValue(":id", $_GET["id"]);
 $stmt->execute();
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
-
+//si la ligne n'existe pas, afficher une erreur
 if (!isset($row['name'])) {
     header('Location:index.php?error');
     exit();

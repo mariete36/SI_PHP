@@ -1,7 +1,5 @@
 <?php
 require_once 'init_db.php';
-require_once 'not_admin.php';
-//require_once 'is_admin.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +22,6 @@ require_once 'not_admin.php';
             <div class="mainMenu">
                <div class="sign">
                   <a href="admin.php">admin_panel</a>
-                  <a href="sign_in.php">connexion</a>
-                   <a href="sign_up.php">inscription</a>
                </div>
                <nav class="mainNav">
                   <a class="mainNav_link" href="anime_list.php">anime</a>
@@ -130,12 +126,6 @@ require_once 'not_admin.php';
       </footer>
    </div>
 
-
-
-   <?php
-// SHOW ERROR MESSAGES
-//require_once "show_error_msg.php";
-?>
 
 <script>
     var right_btn = document.querySelector('.right_btn');

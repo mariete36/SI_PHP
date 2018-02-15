@@ -1,15 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Son
- * Date: 14/02/2018
- * Time: 09:38
+ * la page update selectionne une ligne dont on pourra modifier le nom, le genre, l'url, et l'année.
  */
 session_start();
 require_once "init_db.php";
-
-
-
 
 if (!isset($_POST['id'])) {
     header('Location:index.php');
