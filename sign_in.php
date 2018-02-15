@@ -1,5 +1,6 @@
 <?php
-require 'not_admin.php';
+require 'is_admin.php';
+require_once 'init_db.php';
 ?>
 
 

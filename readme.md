@@ -25,17 +25,17 @@
   |-actions
   |   |--action_add.php
   |   |--action_delete.php
-  |   |--action_modify.php
+  |   |--action_update.php
   |   |--action_add.php
   |   |--action_delete.php
   |   
   |--index.php
   |--init_db.php
   |--admin.php
-  |--init_db.php
-  |--index.php
-  |--init_db.php
-  |--init_db.php
+  |--add.php
+  |--update.php
+  |--anime_description.php
+  |--anime_list.php
   ```
 
 

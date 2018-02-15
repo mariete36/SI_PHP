@@ -1,7 +1,6 @@
 <?php
+require_once 'is_admin.php';
 require_once "init_db.php";
-
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -47,12 +46,12 @@ session_start();
                /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
                $sql = "SELECT
             id,
-            name,
-            genre,
-            url,
-            year
+            `name`,
+            `genre`,
+            `url`,
+            `year`
           FROM
-            anime
+            `anime`
         ;";
                $stmt = $conn->prepare($sql);
                $stmt->execute();
