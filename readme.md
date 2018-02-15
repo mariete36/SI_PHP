@@ -88,3 +88,9 @@
       
   - ```anime_list.php```
       Page d'affichage de tous les animes du site, côté client.
+      
+  - ```is_admin.php```
+      Vérifie si la session est admin.
+        
+  - ```not_admin.php```
+      Maintient une session utilisateur.
