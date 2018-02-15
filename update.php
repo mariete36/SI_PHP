@@ -8,9 +8,6 @@
 session_start();
 require_once "init_db.php";
 
-
-
-
 if (!isset($_POST['id'])) {
     header('Location:index.php');
     exit();
