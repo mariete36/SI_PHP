@@ -112,7 +112,7 @@ require_once "init_db.php";
                             <td class="td" >
                                 <form action="actions/action_user_delete.php" method="POST">
                                     <input type="hidden" name="id" value="<?=$row["id"]?>">
-                                    <input type="submit" value="delete">
+                                    <input class="deletebtn" type="submit" value="delete">
                                 </form>
                             </td>
                         </tr>
