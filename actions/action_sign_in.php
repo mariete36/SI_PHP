@@ -1,4 +1,5 @@
 <?php
+//require '../is_admin.php';
 require_once "../init_db.php";
 $requete = "SELECT 
   `username`,
@@ -15,6 +16,6 @@ if (!isset($_POST['password']) || ($_POST['password'])!==$admin['password']) {
 } else {
     session_start();
     $_SESSION['admin'] = 'yes';
-    header('Location: index.php?message=Welcome');
+    header('Location: admin.php?message=Welcome');
     exit;
 }
