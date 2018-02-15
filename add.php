@@ -13,10 +13,10 @@ session_start();
 <div class="create">
     <p>Add</p>
 
-    <form class="add_form" action="actions/action_add.php" method="post">
+    <form class="add_form" action="actions/action_add.php" enctype="multipart/form-data" method="post">
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
-        <input type="text"      name='url'      placeholder="url">
+        <input type="file"      name="fileToUpload">
         <input type="text"      name='year'         placeholder="year">
         <input type="submit">
     </form>

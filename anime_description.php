@@ -53,6 +53,8 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
 //}
 ?>
 <a href="admin.php">admin</a>
+
+<img src="<?="uploads/".$_GET["id"].".".$row["url"]?>" alt="">
 <h1><?=$row["name"]?></h1>
 
 <p><?=$row["synopsis"]?></p>
