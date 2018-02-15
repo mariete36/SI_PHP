@@ -5,8 +5,10 @@
  * Date: 14/02/2018
  * Time: 09:38
  */
-
+session_start();
 require_once "init_db.php";
+
+
 
 
 if (!isset($_POST['id'])) {

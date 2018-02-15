@@ -1,5 +1,18 @@
 <?php
-
+require_once 'init_db.php';
+require_once 'not_admin.php';
+session_start();
+$sql = "SELECT
+`id`,
+`username`,
+`password`
+FROM
+`users`
+;";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$_SESSION['admin'] = $row["id"];
 ?>
 
 <!DOCTYPE html>
@@ -166,5 +179,3 @@
 </script>
 
 </body>
-
-</html>

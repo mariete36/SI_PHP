@@ -26,7 +26,15 @@
   |   |--action_add.php
   |   |--action_delete.php
   |   |--action_modify.php
+  |   |--action_add.php
+  |   |--action_delete.php
+  |   
   |--index.php
+  |--init_db.php
+  |--admin.php
+  |--init_db.php
+  |--index.php
+  |--init_db.php
   |--init_db.php
   ```
 
@@ -35,19 +43,34 @@
 
   Voici une rapide description de la fonction de chaque ficher. Pour plus de détails consultez les commentaires dans le code.
 
+  - ```admin.php```
+      Ce fichier affiche notre base de donnée sous forme d'un tableau. Cette page ne sera consultée que par les admins. Elle est le Read de notre CRUD.
+      
   - ```index.php```
-      Ce fichier affiche notre base de donnée sous forme d'un tableau. Cette page ne sera consultée que par les admins.
-
+      Ce fichier est la page principale de notre site, coté client.
+      
   - ```init_db.php```
       Ce fichier est le lien entre notre base de donnée MySQL, et notre interface admin de l'```index.php```.
 
   - ```action_add.php```
-      Ce fichier est notre fonction permettant d'ajouter des données dans la base de donnée.
+      Ce fichier est notre fonction permettant d'ajouter des données dans la base de donnée, elle récupère .
 
-  - ```action_delete.php```
-      Ce fichier est notre fonction permettant de supprimer des données dans la base de donnée.
+  - ```add.php```
+      Ce fichier est notre page back-office qui affiche les inputs permettant d'ajouter des données dans la base de donnée.
 
-  - ```action_modify.php```
+  - ```action_update.php```
       Ce fichier est notre fonction permettant de modifier des données dans la base de donnée.
+      
+  - ```update.php```
+      Ce fichier est notre page back-office qui affiche les inputs permettant de modifier des données dans la base de donnée.
    
+  - ```action_delete.php```
+      Ce fichier est notre fonction permettant de supprimer des données dans la base de donnée, elle est implémentée directement dans notre table sous forme d'un bouton au bout de la ligne ciblée, elle supprime la ligne entière.
+      
+  - ```action_sign_in.php```
+      Ce fichier est notre fonction qui permet aux administrateurs d'acceder au back-office elle récupère le form post de la page ```sign_in.php```.
+      
+  - ```sign_in.php```
+      Ce fichier est l'interface permettant aux administrateurs d'accéder au back-office et à la gestion de la base de donnée.
+      
   

@@ -5,7 +5,7 @@
  * Date: 14/02/2018
  * Time: 09:35
  */
-
+session_start();
 ?>
 
 <a href="admin.php">Index</a>

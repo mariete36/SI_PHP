@@ -1,10 +1,6 @@
 <?php
 // CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
-
-
-// START SESSION
-session_start();
 ?>
 
 <!doctype html>
@@ -29,19 +25,18 @@ session_start();
             <th>genre</th>
             <th>picture</th>
             <th>year</th>
-
         </tr>
 
         <?php
         /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
         $sql = "SELECT
-            id,
-            name,
-            genre,
-            url,
-            year
+            `id`,
+            `name`,
+            `genre`,
+            `url`,
+            `year`
           FROM
-            anime
+            `anime`
         ;";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -75,11 +70,6 @@ session_start();
 
 <a href="add.php">Add</a>
 
-<?php
-// SHOW ERROR MESSAGES
-//require_once "show_error_msg.php";
-?>
-
 
     <div class="read">
         <table>
@@ -92,13 +82,12 @@ session_start();
             <?php
             /* on utilise SELECT pour selectionner les noms des données et FROM pour indiquer depuis quelle table.*/
             $sql_user = "SELECT
-                    id,
-                    username,
-                    password
+                    `id`,
+                    `username`,
+                    `password`
                   FROM
-                    user
+                    `user`
                 ;";
-
             $stmt_user = $conn->prepare($sql_user);
             $stmt_user->execute();
             ?>
@@ -122,10 +111,5 @@ session_start();
             <?php endwhile;?>
         </table>
     </div>
-
-    <?php
-    // SHOW ERROR MESSAGES
-    //require_once "show_error_msg.php";
-    ?>
 </body>
 </html>
