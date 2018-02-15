@@ -1,8 +1,11 @@
 <?php
 /**
- * formulaire add
+ * Created by PhpStorm.
+ * User: Son
+ * Date: 14/02/2018
+ * Time: 09:35
  */
-
+session_start();
 ?>
 
 <a href="admin.php">Index</a>
@@ -14,7 +17,10 @@
         <input type="text"      name='name'         placeholder="name">
         <input type="text"      name='genre'        placeholder="genre">
         <input type="file"      name="fileToUpload">
-        <input type="text"      name='year'         placeholder="year">
+        <input type="number"      name='year'         placeholder="year">
+        <input type="number"      name='episode'         placeholder="episode">
+        <input type="text" name="synopsis" placeholder="synopsis">
+
         <input type="submit">
     </form>
 </div>
