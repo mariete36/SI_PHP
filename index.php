@@ -1,18 +1,6 @@
 <?php
 require_once 'init_db.php';
 require_once 'not_admin.php';
-session_start();
-$sql = "SELECT
-`id`,
-`username`,
-`password`
-FROM
-`users`
-;";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-$_SESSION['admin'] = $row["id"];
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +23,8 @@ $_SESSION['admin'] = $row["id"];
             <div class="mainMenu">
                <div class="sign">
                   <a href="admin.php">admin_panel</a>
-                  <a href="sign_in.php">sign_in</a>
+                  <a href="sign_in.php">connexion</a>
+                   <a href="sign_up.php">inscription</a>
                </div>
                <nav class="mainNav">
                   <a class="mainNav_link" href="anime_list.php">anime</a>

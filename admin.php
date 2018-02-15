@@ -1,6 +1,7 @@
 <?php
 // CONNECT TO SERVER AND DATABASE AND GET DATA
 require_once "init_db.php";
+//require 'is_admin.php';
 ?>
 
 <!doctype html>
