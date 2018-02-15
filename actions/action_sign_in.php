@@ -1,13 +1,14 @@
 <?php
-require_once "init.php";
+require_once "../init_db.php";
 $requete = "SELECT 
+  `username`,
   `password`
 FROM 
-  `users`
+  `user`
 ;";
 $stmt = $conn->prepare($requete);
 $stmt->execute();
-$stmt->fetch(PDO::FETCH_ASSOC);
+$admin = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!isset($_POST['password']) || ($_POST['password'])!==$admin['password']) {
     header('Location: ../index.php?error=nop');
     exit;

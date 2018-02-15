@@ -1,12 +1,13 @@
 <?php
 require_once 'init_db.php';
+require_once 'not_admin.php';
 session_start();
 $sql = "SELECT
-id,
-username,
-password
+`id`,
+`username`,
+`password`
 FROM
-users
+`users`
 ;";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
@@ -25,14 +26,14 @@ $_SESSION['admin'] = $row["id"];
 </head>
 
 <body>
-    <div><a href="sign_up.php">sign_up INSCRIPTION</a></div>
-    <div><a href="sign_in.php">sign_in CONNEXION</a></div>
-    <div><a href="admin.php">admin_panel</a></div>
+<div><a href="sign_up.php">sign_up INSCRIPTION</a></div>
+<div><a href="sign_in.php">sign_in CONNEXION</a></div>
+<div><a href="admin.php">admin_panel</a></div>
 
-    <p>
-        Bonjour visiteur, vous avez vu cette page <?php echo $_SESSION['admin'];?> fois.
-    </p>
-    <div><a href="#">logout</a></div>
+<p>
+    Bonjour visiteur, vous avez vu cette page <?php echo $_SESSION['admin'];?> fois.
+</p>
+<div><a href="#">logout</a></div>
 
 <?php
 // SHOW ERROR MESSAGES
@@ -46,7 +47,6 @@ $_SESSION['admin'] = $row["id"];
 
 
 <?php
-
 ?>
 <table>
     <?php while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>

@@ -9,7 +9,7 @@ $requete_user = "INSERT INTO
 `user`
 (`username`, `password`)
 VALUES
-(:username, :pass)
+(:username, :password)
 ;";
 $stmt_user = $conn->prepare($requete_user);
 $stmt_user->bindValue(':username', $_POST['username']);
