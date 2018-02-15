@@ -26,6 +26,7 @@
   |   |--action_add.php
   |   |--action_delete.php
   |   |--action_update.php
+  
   |--index.php
   |--init_db.php
   |--admin.php
@@ -33,10 +34,6 @@
   |--update.php
   |--anime_description.php
   |--anime_list.php
-  |--sign_in.php
-  |--sign_up.php
-  |--is_admin.php
-  |--not_admin.php
   ```
 
 
