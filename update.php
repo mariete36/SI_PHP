@@ -47,7 +47,6 @@ exit();
         <input type="hidden"    name='id'           placeholder="id"        value="<?=$_POST["id"]?>">
         <input type="text"      name='name'         placeholder="name"      value="<?=$row["name"]?>">
         <input type="text"      name='genre'        placeholder="genre"     value="<?=$row["genre"]?>">
-        <input type="text"      name='url'          placeholder="url"       value="<?=$row["url"]?>">
         <input type="text"      name='year'         placeholder="year"      value="<?=$row["year"]?>">
         <input type="submit">
     </form>
